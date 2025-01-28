@@ -11,7 +11,7 @@ export async function convertCurrency(fromCurrency: string, toCurrency: string, 
 	try {
 		const response = await fetch(url, options);
 		const result = await response.json();
-		const convertedAmount = amount * result.rates[toCurrency];
+		const convertedAmount = (amount / result.rates[fromCurrency]) * result.rates[toCurrency];
 
 		return {
 			result: convertedAmount,
