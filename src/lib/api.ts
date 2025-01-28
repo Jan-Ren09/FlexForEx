@@ -3,7 +3,8 @@ export async function convertCurrency(fromCurrency: string, toCurrency: string, 
 	const options = {
 		method: 'GET',
 		headers: {
-			'x-rapidapi-key': 'd44235d736mshfbe84b025a5ef0ap19c4d3jsnc56e06b113cd',
+			'x-rapidapi-key':
+				import.meta.env.VITE_RAPIDAPI_KEY || 'd44235d736mshfbe84b025a5ef0ap19c4d3jsnc56e06b113cd',
 			'x-rapidapi-host': 'currency-conversion-and-exchange-rates.p.rapidapi.com'
 		}
 	};
