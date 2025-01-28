@@ -55,7 +55,7 @@
 		class="w-full max-w-lg rounded-2xl border border-black bg-gray-950 p-6 text-center shadow-xl"
 	>
 		<!-- App Title -->
-		<h1 class="mb-8 text-3xl font-bold text-[#FFD700]">FlexForEx</h1>
+		<h1 class="mb-8 text-3xl font-bold text-[#FFD700]">ForexFlex</h1>
 
 		<!-- Converter Card -->
 		<div class="w-full rounded-xl bg-[#333333] p-6 shadow-2xl">
