@@ -14,7 +14,7 @@ permissions:
 jobs:
   build_site:
     runs-on: ubuntu-latest
-    secrets: inherit
+    environment: github-pages
     env:
       VITE_RAPIDAPI_KEY: ${{ secrets.VITE_RAPIDAPI_KEY }}
       GH_TOKEN: ${{ github.token }}
@@ -52,7 +52,6 @@ jobs:
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
-    secrets: inherit
 
     permissions:
       pages: write
