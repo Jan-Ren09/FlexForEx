@@ -39,7 +39,7 @@ jobs:
 
       - name: Debug Environment
         run: |
-          echo "VITE_RAPIDAPI_KEY exists: ${{ env.VITE_RAPIDAPI_KEY != '' }}"
+          echo "VITE_RAPIDAPI_KEY exists: ${{ secrets.VITE_RAPIDAPI_KEY != '' }}"
           echo "Build directory contents:"
           ls -la build/
 
