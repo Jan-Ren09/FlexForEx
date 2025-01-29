@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Tell me a secret!
-        run:
+        run: echo "This is a secret step!"
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -33,6 +33,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'build/'
+          name: 'github-pages' # Explicitly set the artifact name
 
   deploy:
     needs: build_site
@@ -52,3 +53,5 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact-name: 'github-pages' # Ensure this matches the artifact name
