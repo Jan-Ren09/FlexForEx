@@ -14,6 +14,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Verify API Key
+        run: |
+          if [ -z "$VITE_RAPIDAPI_KEY" ]; then
+            echo "::error::VITE_RAPIDAPI_KEY is not set. Please add it to repository secrets."
+            exit 1
+          else
+            echo "VITE_RAPIDAPI_KEY is properly set"
+          fi
+
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
@@ -27,6 +36,12 @@ jobs:
         env:
           BASE_PATH: '/FlexForEx'
         run: pnpm run build
+
+      - name: Debug Environment
+        run: |
+          echo "VITE_RAPIDAPI_KEY exists: ${{ env.VITE_RAPIDAPI_KEY != '' }}"
+          echo "Build directory contents:"
+          ls -la build/
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
