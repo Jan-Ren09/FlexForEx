@@ -12,6 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Tell me a secret!
+        run:
+
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
@@ -42,7 +45,7 @@ jobs:
       contents: read
 
     environment:
-      name: github-pages
+      name: FlexForEx
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
