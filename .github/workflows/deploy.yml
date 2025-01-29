@@ -8,6 +8,9 @@ on:
 jobs:
   build_site:
     runs-on: ubuntu-latest
+    env:
+      VITE_RAPIDAPI_KEY: ${{ secrets.VITE_RAPIDAPI_KEY }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,7 +27,6 @@ jobs:
       - name: Build site
         env:
           BASE_PATH: '/FlexForEx'
-          VITE_RAPIDAPI_KEY: ${{ secrets.VITE_RAPIDAPI_KEY }}
         run: pnpm run build
 
       - name: Upload Artifacts
