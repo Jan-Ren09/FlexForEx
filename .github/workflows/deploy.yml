@@ -9,10 +9,8 @@ jobs:
   build_site:
     runs-on: ubuntu-latest
     env:
-      VITE_RAPIDAPI_KEY: ${{secrets.VITE_RAPIDAPI_KEY}}
+      VITE_RAPIDAPI_KEY: ${{ secrets.VITE_RAPIDAPI_KEY }}
     steps:
-      - name: Show me
-        uses: echo ${{var.VITE_RAPIDAPI_KEY}}
       - name: Checkout
         uses: actions/checkout@v4
 
