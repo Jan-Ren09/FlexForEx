@@ -14,14 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Verify API Key
-        run: |
-          if [ -z "$VITE_RAPIDAPI_KEY" ]; then
-            echo "::error::VITE_RAPIDAPI_KEY is not set. Please add it to repository secrets."
-            exit 1
-          else
-            echo "VITE_RAPIDAPI_KEY is properly set"
-          fi
+      - run: |
+          gh issue --repo ${{ github.repository }} \
+            create --title "Issue title" --body "Issue body"
+        env:
+          VITE_RAPIDAPI_KEY: ${{ secrets.VITE_RAPIDAPI_KEY }}
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
