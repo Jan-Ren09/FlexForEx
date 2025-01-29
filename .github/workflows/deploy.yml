@@ -12,9 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Tell me a secret!
-        run: echo "This is a secret step!"
-
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
@@ -27,6 +24,8 @@ jobs:
       - name: Build site
         env:
           BASE_PATH: '/FlexForEx'
+          VITE_RAPIDAPI_KEY: ${{secrets.VITE_RAPIDAPI_KEY}}
+
         run: pnpm run build
 
       - name: Upload Artifacts
