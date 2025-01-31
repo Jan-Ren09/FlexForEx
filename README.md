@@ -1,5 +1,7 @@
 # FlexForEx
 
+Update by Jaeho
+
 **FlexForEx** is a currency conversion app built with **Svelte**. It allows users to convert amounts between different currencies using real-time exchange rates. The app is lightweight, fast, and easy to use, making it a great tool for quick currency conversions.
 
 ---
