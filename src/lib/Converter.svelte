@@ -64,7 +64,8 @@
 				<div class="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
 					<!-- Amount Input -->
 					<div class="flex-1">
-						<label for="amount" class="mb-1 block text-sm font-medium text-[#F5F5F5]">Amount</label>
+						<label for="amount" class="mb-1 block text-sm font-medium text-[#F5F5F5]">Amounts</label
+						>
 						<input
 							id="amount"
 							type="number"
